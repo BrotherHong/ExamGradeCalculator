@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:text="段考成績計算機"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <!-- 使用科目控制 -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="科目"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="分數"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="加權"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <Switch
+                android:id="@+id/use"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:checked="true"
+                android:gravity="center"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 國文 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chinese"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="國文"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/chS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:focusedByDefault="false"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/chW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="4"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/chC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <!-- 英文 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/english"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="英文"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/enS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/enW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="4"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/enC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 數學 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/math"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="數學"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/mathS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/mathW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="4"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/mathC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 物理 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/physics"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="物理"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/phyS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/phyW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/phyC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 地科 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/earth"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="地科"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/earthS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/earthW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/earthC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 地理 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/geo"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="地理"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/geoS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/geoW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/geoC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 歷史 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/histroy"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="歷史"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/hisS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/hisW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/hisC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!-- 公民 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/citizen"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="公民"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/citS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/citW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="1"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <Switch
+                    android:id="@+id/citC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="總分:"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/totalScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0.0"
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/avg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="平均:"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/avgScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0.0"
+                        android:textSize="40sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/totalweight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="加權總分:"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/totalWeightScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0.0"
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/avgWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="加權平均:"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/avgWeightScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0.0"
+                        android:textSize="40sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/calc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="按我計算"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/radar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看雷達圖"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="設定"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="初始化"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

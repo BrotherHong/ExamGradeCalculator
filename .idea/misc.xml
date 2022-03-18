@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectResources">
+    <resource url="http://schemas.android.com/apk/res-auto" location="$APPLICATION_HOME_DIR$/plugins/testng/lib/testng-plugin.jar!/resources/standardSchemas/testng-1.0.dtd" />
+    <resource url="http://schemas.android.com/apk/res/android" location="$APPLICATION_HOME_DIR$/plugins/testng/lib/testng-plugin.jar!/resources/standardSchemas/testng-1.0.dtd" />
+    <resource url="http://schemas.android.com/tools" location="$APPLICATION_HOME_DIR$/plugins/testng/lib/testng-plugin.jar!/resources/standardSchemas/testng-1.0.dtd" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Android API 32 Platform" project-jdk-type="Android SDK" />
+</project>
